@@ -65,29 +65,28 @@ def print_links():
     for link in unique_links.keys():
         print(link)
 
-def save_crawl_data(folder_path):
-    filename = '{0}.spider'.format(datetime.datetime.now())
-    with open(filename, 'wb') as fp:
-        pickle.dump(crawl_result, fp)
-
-
-
 def search_and_print_result(key_word, mode = 0):
     result = search(key_word, mode)
     for x in result:
         print(x)
 
+'''
 def load_crawl_data(filename):
     with open(filename, 'rb') as fp:
         crawl_result = pickle.load(fp)
 
+def save_crawl_data(folder_path):
+    filename = '{0}.spider'.format(datetime.datetime.now())
+    with open(filename, 'wb') as fp:
+        pickle.dump(crawl_result, fp)
+
+'''
 
 
 
-#crawl(['https://www.tumblr.com/tagged/art'])
 
 #save_crawl_data('/Users/fsa/Documents/Py/')
 
-load_crawl_data('/Users/fsa/PycharmProjects/Spider/fuck.spider')
 
+crawl(['https://www.tumblr.com/tagged/art'])
 search_and_print_result("tumblr", 2)
